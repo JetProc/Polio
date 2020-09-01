@@ -38,7 +38,7 @@ const Main = () => {
       >
         <div style={{ display: "flex", flex: 5 }} />
         <ClockConatiner>
-          <Clock className="ClockTime" format={"HH:mm"} timezone={"Pacific/KR"} />
+          <Clock className="ClockTime" format={"HH:mm"} timezone={"Asia/Seoul"} />
           <br />
           <Clock className="ClockDate" format={"ddd, MMM D"} />
         </ClockConatiner>
