@@ -3,7 +3,7 @@ import styled, { css, keyframes } from "styled-components";
 
 import Clock from "react-live-clock";
 
-const Main = () => {
+const Initial = () => {
   const [imageNum, setImageNum] = useState(1);
   const [screenClicked, setScreenClicked] = useState(10);
   function selectPicture() {
@@ -17,6 +17,16 @@ const Main = () => {
   function Escape(event) {
     if (event.key === "Escape") setScreenClicked(0);
   }
+
+  const BigClock = () => {
+    return (
+      <ClockConatiner>
+        <Clock className="ClockTime" format={"HH:mm"} timezone={"Asia/Seoul"} />
+        <br />
+        <Clock className="ClockDate" format={"ddd, MMM D"} />
+      </ClockConatiner>
+    );
+  };
   const Login = () => {
     return (
       <>
@@ -29,6 +39,7 @@ const Main = () => {
       </>
     );
   };
+
   return (
     <>
       <BackgroundImage
@@ -37,17 +48,17 @@ const Main = () => {
         isBlur={screenClicked}
       >
         <div style={{ display: "flex", flex: 5 }} />
-        <ClockConatiner>
-          <Clock className="ClockTime" format={"HH:mm"} timezone={"Asia/Seoul"} />
-          <br />
-          <Clock className="ClockDate" format={"ddd, MMM D"} />
-        </ClockConatiner>
+        <BigClock />
       </BackgroundImage>
 
       <Login />
     </>
   );
 };
+
+const GuestLogin = styled.input`
+  color: grey;
+`;
 
 const boxDown = keyframes`
 from{top: -400%;}
@@ -58,6 +69,7 @@ from{top:15%;}
 to{top:-400%;}
 `;
 const LoginConatiner = styled.div`
+  background-color: yellow;
   position: absolute;
   top: -400%;
   left: 50%;
@@ -134,4 +146,4 @@ const BackgroundImage = styled.div`
     `}
 `;
 
-export default Main;
+export default Initial;
