@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import Icon from "../atoms/Icon";
 
-const TaskBarIcon = (props) => {
+const TaskBarSystemIcon = (props) => {
   return (
     <TaskBarIconConatiner>
-      <Icon url={props.url} isTaskBar />
+      <Icon url={props.url} isTaskBarSys />
     </TaskBarIconConatiner>
   );
 };
 const TaskBarIconConatiner = styled.div`
-  width: 46px;
+  width: 24px;
   height: 46px;
   transition: 0.3s;
 
@@ -22,4 +22,4 @@ const TaskBarIconConatiner = styled.div`
     background-color: #353b48;
   }
 `;
-export default TaskBarIcon;
+export default TaskBarSystemIcon;

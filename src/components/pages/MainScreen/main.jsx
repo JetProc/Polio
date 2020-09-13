@@ -2,21 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 import TaskBar from "../../organisms/TaskBar";
-import IconD from "../../molecules/RegularIcon";
+import IconR from "../../molecules/RegularIcon";
 
 const Main = () => {
   return (
     <>
-      <BackgroundImage />
-
-      <TaskBar />
+      <BackgroundImage>
+        <IconR url="chrome" />
+        <TaskBar />
+      </BackgroundImage>
     </>
   );
 };
-const Icons = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+
 const BackgroundImage = styled.div`
   position: relative;
   width: 100%;
