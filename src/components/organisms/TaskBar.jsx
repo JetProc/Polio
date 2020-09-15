@@ -12,8 +12,15 @@ const TaskBar = () => {
         <LeftContainer>
           <IconT url="windowLogo" />
           <IconT url="search" />
+          <IconT url="toDo" />
           <IconT url="file" />
           <IconT url="chrome" />
+          <IconT url="edge" />
+          <IconT url="vsCode" />
+          <IconT url="zoom" />
+          <IconT url="photoshop" />
+          <IconT url="xd" />
+          <IconT url="overwatch" />
         </LeftContainer>
         <RightContainer>
           <HomeButton />
@@ -34,7 +41,6 @@ const TaskBarContainer = styled.div`
   height: 46px;
   bottom: 0;
   background-color: #0d131b;
-  opacity: 70%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

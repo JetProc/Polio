@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled, { css, keyframes } from "styled-components";
-
+import { Link } from "react-router-dom";
 import Clock from "react-live-clock";
 
 const Initial = () => {
@@ -35,6 +35,9 @@ const Initial = () => {
           <Profile src="/icons/user.png" />
           <User>Kwoun Soon Jae</User>
           <InputPassword type="text" onKeyDown={Escape} placeholder="password" autoFocus isBlur={screenClicked} />
+          <GuestLogin>
+            <Link to="/main">Guest login</Link>
+          </GuestLogin>
         </LoginConatiner>
       </>
     );
@@ -56,7 +59,7 @@ const Initial = () => {
   );
 };
 
-const GuestLogin = styled.input`
+const GuestLogin = styled.button`
   color: grey;
 `;
 

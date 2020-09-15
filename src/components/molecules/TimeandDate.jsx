@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-
 import Clock from "react-live-clock";
 
 const TimeandDate = (props) => {
   return (
     <Container>
       <Time format={"h:mm A"} timezone={"Asia/Seoul"}></Time>
-      <Date format={"M/D/YYYY"} timezone={"Asia/Seoul"}></Date>
+      <Date format={"YYYY-MM-D"} timezone={"Asia/Seoul"}></Date>
     </Container>
   );
 };

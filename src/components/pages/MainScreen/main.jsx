@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
+import Window from "../../organisms/Windows";
+import Icons from "../../organisms/Icons";
 import TaskBar from "../../organisms/TaskBar";
-import IconR from "../../molecules/RegularIcon";
-
 const Main = () => {
   return (
     <>
       <BackgroundImage>
-        <IconR url="chrome" />
+        <MainConatiner>
+          <Icons />
+          <Window />
+        </MainConatiner>
         <TaskBar />
       </BackgroundImage>
     </>
@@ -17,7 +20,6 @@ const Main = () => {
 
 const BackgroundImage = styled.div`
   position: relative;
-  width: 100%;
   height: 100vh;
   background: url("/images/mainImage.jpg");
   background-position: center;
@@ -26,5 +28,11 @@ const BackgroundImage = styled.div`
   flex-direction: column;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 `;
-
+const MainConatiner = styled.div`
+  height: 90%;
+  padding: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+`;
 export default Main;
