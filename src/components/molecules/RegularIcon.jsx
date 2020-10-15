@@ -2,15 +2,33 @@ import React from "react";
 import styled from "styled-components";
 
 import Icon from "../atoms/Icon";
+import { useOpenInWindow }  from 'use-open-window';
+import * as LinkToUrl from "../atoms/LinkToUrl"
 
+const optionsDefault = {
+   centered: true,
+   specs: {
+      width: 780,
+      height: 540,
+   },
+};
+const optionsFullScreen = {
+  centered: true,
+  specs: {
+     width: 1920,
+     height: 1080,
+  },
+}
 const RegularIcon = (props) => {
+  const isFullScreen = props.isFullScreen;
+  const [handleWindowOpen, newWindowHandle] = useOpenInWindow(LinkToUrl.SwitchUrl(props), isFullScreen ? optionsFullScreen : optionsDefault);
   return (
-    <RegularIconContainer>
-      <IconContainer>
-        <Icon url={props.url} RegularIcon />
-        <IconName className="IconName">{props.name || props.url}</IconName>
-      </IconContainer>
-    </RegularIconContainer>
+      <RegularIconContainer>
+        <IconContainer onDoubleClick={handleWindowOpen} isFileIcon={props.FileIcon}>
+          <Icon url={props.url} RegularIcon />
+          <IconName className="IconName"isFileIcon={props.FileIcon}>{props.name || props.url}</IconName>
+        </IconContainer>
+      </RegularIconContainer>
   );
 };
 const RegularIconContainer = styled.div`
@@ -29,8 +47,9 @@ const IconName = styled.div`
   word-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  color: white;
-  text-shadow: 0.4px 0.4px 1px black;
+
+  color : ${props => props.isFileIcon ? "black" : "white"};
+  text-shadow:${props => props.isFileIcon ? "" : "0.4px 0.4px 1px black"};
 `;
 const IconContainer = styled.button`
   width: 80px;
@@ -39,13 +58,14 @@ const IconContainer = styled.button`
   display: flex;
   align-items: center;
   flex-direction: column;
+
   &:hover {
-    background-color: rgb(52, 73, 94, 0.4);
-    border: 1px solid rgb(236, 240, 241, 0.4);
+    background-color: ${props=> props.isFileIcon ? "rgb(51, 152, 219, 0.21)" :"rgb(52, 73, 94, 0.4)"};
+    border: ${props=> props.isFileIcon ? "" : "1px solid rgb(236, 240, 241, 0.4)"};
   }
   &:focus {
-    background-color: rgb(52, 152, 219, 0.4);
-    border: 1px solid rgb(236, 240, 241, 0.4);
+    background-color: ${props=> props.isFileIcon ? "rgb(51, 152, 219, 0.4)" :"rgb(52, 152, 219, 0.4)"};
+    border: ${props=> props.isFileIcon ? "1px solid rgb(51, 152, 219, 1)" : "1px solid rgb(236, 240, 241, 0.4)"};
     .IconName {
       text-overflow: ellipsis;
       word-wrap: break-word;
@@ -58,4 +78,5 @@ const IconContainer = styled.button`
   outline: none;
   border: 1px solid transparent;
 `;
+
 export default RegularIcon;

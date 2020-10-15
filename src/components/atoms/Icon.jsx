@@ -1,4 +1,5 @@
 import React from "react";
+
 import styled, { css } from "styled-components";
 
 const Icon = (props) => {
@@ -24,8 +25,8 @@ const Ic = styled.img`
     ${(props) =>
     props.RegularIcon &&
     css`
-      width: 70px
-      height: 70px;
+      width: 50px;
+      height: 50px;
     `}
 `;
 

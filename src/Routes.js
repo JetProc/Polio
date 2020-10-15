@@ -1,45 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { AnimatedSwitch, spring } from "react-router-transition";
+
 import App from "./App";
 import Main from "./components/pages/MainScreen/main";
-function bounce(val) {
-  return spring(val, {
-    stiffness: 330,
-    damping: 22,
-  });
-}
-function mapStyles(styles) {
-  return {
-    opacity: styles.opacity,
-    transform: `scale(${styles.scale})`,
-  };
-}
-const bounceTransition = {
-  atEnter: {
-    opacity: 0,
-    scale: 1.2,
-  },
-  atLeave: {
-    opacity: bounce(0),
-    scale: bounce(0.8),
-  },
-  atActive: {
-    opacity: bounce(1),
-    scale: bounce(1),
-  },
-};
-export default () => (
-  <Router>
-    <AnimatedSwitch
-      atEnter={bounceTransition.atEnter}
-      atLeave={bounceTransition.atLeave}
-      atActive={bounceTransition.atActive}
-      mapStyles={mapStyles}
-      className="switch-wrapper"
-    >
-      <Route exact path="/" component={App} />
-      <Route exact path="/main" component={Main} />
-    </AnimatedSwitch>
-  </Router>
-);
+
+import MyProjects from "./components/pages/Others/MyProjects"
+import MyProfile from "./components/pages/Others/MyProfile"
+import RecycleBin from "./components/pages/Others/RecycleBin"
+import Test from "./components/pages/Others/Test"
+import Default from "./components/pages/Others/DefaultPage"
+const Routes = (props) => {
+  return(
+    <Router>
+        <Route exact path="/" component={App} />
+        <Route path="/main" component={Main} />
+        <Route  path="/Test" component={Test}/>
+        <Route path="/MyProjects" component={MyProjects}/>
+        <Route path="/MyProfile" component={MyProfile}/>
+        <Route path="/RecycleBin" component={RecycleBin}/>
+        <Route path="/Default" component ={Default}/>
+
+    </Router>
+  );
+  }
+ 
+export default Routes;

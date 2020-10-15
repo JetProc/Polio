@@ -7,7 +7,6 @@ import TimeandDates from "../molecules/TimeandDate";
 
 const TaskBar = () => {
   return (
-    <>
       <TaskBarContainer>
         <LeftContainer>
           <IconT url="windowLogo" />
@@ -32,7 +31,6 @@ const TaskBar = () => {
           <IconTS url="arrow-up" />
         </RightContainer>
       </TaskBarContainer>
-    </>
   );
 };
 const TaskBarContainer = styled.div`

@@ -1,11 +1,32 @@
 import React, { useState, useEffect } from "react";
 import styled, { css, keyframes } from "styled-components";
-import { Link } from "react-router-dom";
+
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { Link,useHistory } from "react-router-dom";
 import Clock from "react-live-clock";
 
 const Initial = () => {
   const [imageNum, setImageNum] = useState(1);
   const [screenClicked, setScreenClicked] = useState(10);
+  const history = useHistory();
+
+  const notify = () => {
+    toast('Password is incorrect !', {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      closeButton: false,
+      transition: Bounce,
+      }
+    );
+  };
+
   function selectPicture() {
     const howManyImages = 30;
     const randomIndex = Math.floor(Math.random() * howManyImages);
@@ -13,9 +34,8 @@ const Initial = () => {
     setImageNum(selectedPicture);
   }
   useEffect(selectPicture, []);
-
-  function Escape(event) {
-    if (event.key === "Escape") setScreenClicked(0);
+  const clearWaitingQueue = () => {
+    toast.clearWaitingQueue();
   }
 
   const BigClock = () => {
@@ -27,16 +47,43 @@ const Initial = () => {
       </ClockConatiner>
     );
   };
+
   const Login = () => {
+    const [password, setPassword] = useState("");
+    const myPw = "dimigo";
     return (
       <>
         <div style={{ display: "flex", flex: 5 }} />
         <LoginConatiner isBlur={screenClicked}>
+          <StyledToastContainer pauseOnFocusLoss={false}  limit={1}/>
           <Profile src="/icons/user.png" />
           <User>Kwoun Soon Jae</User>
-          <InputPassword type="text" onKeyDown={Escape} placeholder="password" autoFocus isBlur={screenClicked} />
+          <InputContainer>
+            <InputPassword type="password" value={password} onKeyDown={(event)=>{
+              if (event.key === "Escape") setScreenClicked(0);  
+              if(event.key==="Enter" && screenClicked===1) {
+                if(myPw === password) history.push('/main');
+                else 
+                {
+                  if(password==="");
+                  else notify();
+                }
+                setPassword("");  
+                clearWaitingQueue();
+    }}} onChange={(e)=>{setPassword(e.target.value)}} placeholder="password" autoFocus isBlur={screenClicked} />
+            <EnterPassword type="button" onClick={()=>{
+              if(myPw === password) history.push('/main');
+              else 
+              {
+                if(password==="");
+                else notify();
+              }
+              setPassword("");  
+              clearWaitingQueue();
+            }}><img src={"/icons/right-arrow.png"} alt="right-arrow"/></EnterPassword>
+          </InputContainer>
           <GuestLogin>
-            <Link to="/main">Guest login</Link>
+            <GuestLoginLink to="/main">Guest login</GuestLoginLink>
           </GuestLogin>
         </LoginConatiner>
       </>
@@ -48,19 +95,77 @@ const Initial = () => {
       <BackgroundImage
         picture={"/images/Image" + imageNum + ".jpg"}
         onClick={() => setScreenClicked(1)}
+        onKeyDown={()=>setScreenClicked(1)}
         isBlur={screenClicked}
       >
         <div style={{ display: "flex", flex: 5 }} />
         <BigClock />
       </BackgroundImage>
-
       <Login />
-    </>
+
+</>
   );
 };
 
-const GuestLogin = styled.button`
-  color: grey;
+const GuestLoginLink = styled(Link)`
+  text-decoration:none;
+  color: #b2bec3;
+  margin-top:10px;
+  font-size: 18px;
+  &:hover{
+    color: #dfe6e9;
+  }
+`;
+
+const InputContainer = styled.div`
+  width:max-content;
+  border: 3px solid white;
+  border-radius: 2px;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  margin: 0 auto;
+
+`;
+const InputPassword = styled.input`
+  margin:0px;
+  padding:0px;
+  width: 220px;
+  height: 36px;
+  outline: none;
+  border:none;
+`;
+const EnterPassword = styled.button`
+  background-color:#747d8c;
+  margin:0px;
+  padding:0px;
+  width:36px;
+  height:36px;
+  outline: none;
+  border:none;
+  &:hover{
+    background-color:#a4b0be;
+  }
+`;
+
+const StyledToastContainer = styled(ToastContainer).attrs({
+  toastClassName: 'toast',
+})`
+  width: 280px;
+  .toast {
+      color:white;
+      text-align:center;
+      font-family: "Nanum Gothic", sans-serif;
+      background-color: transparent;
+      box-shadow: none;
+      font-size: 20px;
+  }
+`;
+
+const GuestLogin = styled.div`
+  display: flex;
+  color: transparent;
+  justify-content:center;
 `;
 
 const boxDown = keyframes`
@@ -72,7 +177,6 @@ from{top:15%;}
 to{top:-400%;}
 `;
 const LoginConatiner = styled.div`
-  background-color: yellow;
   position: absolute;
   top: -400%;
   left: 50%;
@@ -83,7 +187,7 @@ const LoginConatiner = styled.div`
   justify-content: center;
   flex-direction: column;
   font-family: "Nanum Gothic", sans-serif;
-
+  font-weight: bold;
   ${(props) =>
     props.isBlur === 1 &&
     css`
@@ -108,12 +212,7 @@ const Profile = styled.img`
   height: 140px;
   margin: 0px auto;
 `;
-const InputPassword = styled.input`
-  width: 220px;
-  height: 30px;
-  outline: none;
-  margin: 30px auto 0px auto;
-`;
+
 
 const ClockConatiner = styled.div`
   display: flex;
