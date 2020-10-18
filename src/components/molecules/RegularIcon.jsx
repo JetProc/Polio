@@ -58,6 +58,8 @@ const IconContainer = styled.button`
   display: flex;
   align-items: center;
   flex-direction: column;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight:bold;
 
   &:hover {
     background-color: ${props=> props.isFileIcon ? "rgb(51, 152, 219, 0.21)" :"rgb(52, 73, 94, 0.4)"};

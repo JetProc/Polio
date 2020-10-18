@@ -12,14 +12,14 @@ const TaskBar = () => {
           <IconT url="windowLogo" />
           <IconT url="search" />
           <IconT url="toDo" />
-          <IconT url="file" />
-          <IconT url="chrome" />
+          <IconT url="file" value=""/>
+          <IconT url="chrome" value="google"/>
           <IconT url="edge" />
           <IconT url="vsCode" />
           <IconT url="zoom" />
           <IconT url="photoshop" />
           <IconT url="xd" />
-          <IconT url="overwatch" />
+          <IconT url="overwatch" value="overwatch"/>
         </LeftContainer>
         <RightContainer>
           <HomeButton />

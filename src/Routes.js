@@ -7,6 +7,7 @@ import Main from "./components/pages/MainScreen/main";
 import MyProjects from "./components/pages/Others/MyProjects"
 import MyProfile from "./components/pages/Others/MyProfile"
 import RecycleBin from "./components/pages/Others/RecycleBin"
+import MyGames from "./components/pages/Others/MyGame";
 import Test from "./components/pages/Others/Test"
 import Default from "./components/pages/Others/DefaultPage"
 const Routes = (props) => {
@@ -14,10 +15,11 @@ const Routes = (props) => {
     <Router>
         <Route exact path="/" component={App} />
         <Route path="/main" component={Main} />
-        <Route  path="/Test" component={Test}/>
-        <Route path="/MyProjects" component={MyProjects}/>
-        <Route path="/MyProfile" component={MyProfile}/>
-        <Route path="/RecycleBin" component={RecycleBin}/>
+        <Route path="/Test" component={Test}/>
+        <Route path="/My Projects" component={MyProjects}/>
+        <Route path="/My Profile" component={MyProfile}/>
+        <Route path="/My Games" component={MyGames}/>
+        <Route path="/Recycle Bin" component={RecycleBin}/>
         <Route path="/Default" component ={Default}/>
 
     </Router>

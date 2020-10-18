@@ -53,17 +53,14 @@ const StyledToastContainer = styled(ToastContainer).attrs({
   bodyClassName: 'body',
 })`
   width: 200px;
-
-   /* .toast is passed to toastClassName */
+  font-weight:bold;
   .toast {
-      border-radius:24px;
+      border-radius:26px;
       color:black;
       text-align:center;
+      font-family: "Nanum Gothic", sans-serif;
   }
 
-  /* .body is passed to bodyClassName */
-  .body {
-  }
 
 `;
 const BackgroundImage = styled.div`

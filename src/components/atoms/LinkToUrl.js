@@ -1,8 +1,13 @@
 export function SwitchUrl(props){
-    var url="/Default";
+    var url="";
+    if(props.isLink)
+    {
+        url=props.value;
+        return url;
+    }
     switch(props.value){
       case 'overwatch':
-        url = 'https://playoverwatch.com/ko-kr/';
+        url = 'battlenet:://';
         break;
       case 'google':
         url='https://www.google.com/';
@@ -14,19 +19,34 @@ export function SwitchUrl(props){
         url="https://www.facebook.com/profile.php?id=100005557187351/";
         break;
     case 'MyProjects':
-        url="/MyProjects"
+        url="/My Projects"
         break;
     case 'MyProfile':
-        url="/MyProfile"
+        url="/My Profile"
         break;
     case 'RecycleBin':
-        url="/RecycleBin"
+        url="/Recycle Bin"
         break;
     case 'JumpUp':
         url="https://play.google.com/store/apps/details?id=com.JetProc.JumpUp";
         break;
     case 'Savers':
         url="https://savers.vercel.app/"
+        break;
+    case 'Holdable':
+        url="https://github.com/JetProc/Holdable";
+        break;
+    case 'Holdable2':
+        url="https://github.com/JetProc/Holdable2";
+        break;
+    case 'Shiba':
+        url="https://github.com/JetProc/SHIBAs-English-Class";
+        break;
+    case 'Hangeul':
+        url="https://github.com/JetProc/defence-Hangeul";
+        break;
+    case 'naver':
+        url="https://www.naver.com";
         break;
     case 'fileTest':
         url='/FileTest'
