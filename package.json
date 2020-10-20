@@ -12,6 +12,7 @@
     "react-live-clock": "^4.0.5",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
     "react-toastify": "^6.0.9",
     "react-transition-group": "^1.2.1",
     "styled-components": "^5.1.1",
