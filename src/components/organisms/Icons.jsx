@@ -13,19 +13,12 @@ const Icon = () => {
       />
       <IconR url="overwatch" name="Overwatch" value="overwatch"/>
       <IconR url="github" name="Github" value="github"/>
-      <IconR url="chrome" name="edfji didfje difjfe dfijef" />
       <IconR url="facebook-doodle" name="Facebook" value="facebook" isFullScreen/>
       <IconR url="game" name="My Games" value="game" />
-      <IconR url="chrome" name="fileTest" value="fileTest" />
+      <IconR url="file" name="School" value="School" />
       <IconR url="trash" name="Recycle Bin" value="RecycleBin" />
       <IconR url="naver" name="Naver" value="naver" isFullScreen/>
-      <IconR url="chrome" />
-      <IconR url="chrome" />
-      <IconR url="chrome" />
-      <IconR
-        url="chrome"
-        name="The iPad is Apple's anxiously awaited entry into the tablet computer market blahblahbla"
-      />
+      <IconR url="chrome" name="Chrome"/>
     </>
   );
 };

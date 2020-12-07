@@ -10,6 +10,7 @@ const optionsDefault = {
   specs: {
      width: 780,
      height: 540,
+     scrollbars: 0,
   },
 };
 const optionsFullScreen = {

@@ -2,21 +2,13 @@ import React from "react";
 
 import File from "../../atoms/File"
 const array = [
-  {
-    url: "chrome",
-    name: "chrome",
-    value: "overwatch",
-  },
-  {
-    url: "chrome",
-    name: "Faceedfdfbookk",
-    value: "https://www.facebook.com",
-  },
-  {
-    url: "vsCode",
-    name: "비주얼 스투디오 코드",
-    value: "github",
-  }
+  
+    /*
+    url: "{urlLinkName}"
+    name: "{appName}"
+    value:"{siteLink or LinkToUrl-linkName}"
+    */
+
 ]
 const MyProjects = (props) => {
   return (

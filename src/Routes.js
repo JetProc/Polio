@@ -9,6 +9,7 @@ import MyProfile from "./components/pages/Others/MyProfile"
 import RecycleBin from "./components/pages/Others/RecycleBin"
 import MyGames from "./components/pages/Others/MyGame";
 import Test from "./components/pages/Others/Test"
+import School from "./components/pages/Others/School"
 import Default from "./components/pages/Others/DefaultPage"
 const Routes = (props) => {
   return(
@@ -20,6 +21,7 @@ const Routes = (props) => {
         <Route path="/My Profile" component={MyProfile}/>
         <Route path="/My Games" component={MyGames}/>
         <Route path="/Recycle Bin" component={RecycleBin}/>
+        <Route path="/School" component={School}/>
         <Route path="/Default" component ={Default}/>
 
     </Router>

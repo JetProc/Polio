@@ -3,20 +3,21 @@ import styled from "styled-components";
 
 import Icon from "../atoms/Icon";
 import { useOpenInWindow }  from 'use-open-window';
-import * as LinkToUrl from "../atoms/LinkToUrl"
+import * as LinkToUrl from "../atoms/LinkToUrl";
 
 const optionsDefault = {
    centered: true,
    specs: {
       width: 780,
       height: 540,
+
    },
 };
 const optionsFullScreen = {
   centered: true,
   specs: {
-     width: 1920,
-     height: 1080,
+     width: 960,
+     height: 540,
   },
 }
 const RegularIcon = (props) => {

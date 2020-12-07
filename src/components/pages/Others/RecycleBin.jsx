@@ -8,11 +8,6 @@ const RecycleBin = (props) => {
       name: "지난 시간들",
       value: "df",
     },
-    {
-      url: "chrome",
-      name: "Faceedfdfbookk",
-      value: "https://www.facebook.com",
-    }
   ]
   return (
     <>

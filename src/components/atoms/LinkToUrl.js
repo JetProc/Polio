@@ -19,13 +19,16 @@ export function SwitchUrl(props){
         url="https://www.facebook.com/profile.php?id=100005557187351/";
         break;
     case 'MyProjects':
-        url="/My Projects"
+        url="/My Projects";
         break;
     case 'MyProfile':
-        url="/My Profile"
+        url="/My Profile";
         break;
     case 'RecycleBin':
-        url="/Recycle Bin"
+        url="/Recycle Bin";
+        break;
+    case 'School' :
+        url="/School";
         break;
     case 'JumpUp':
         url="https://play.google.com/store/apps/details?id=com.JetProc.JumpUp";
