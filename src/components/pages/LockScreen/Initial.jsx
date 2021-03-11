@@ -181,8 +181,8 @@ const LoginConatiner = styled.div`
   top: -400%;
   left: 50%;
   transform: translateX(-50%);
-  width: 400px;
-  height: 500px;
+  width: 60%;
+  height: auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -203,35 +203,34 @@ const LoginConatiner = styled.div`
 `;
 
 const User = styled.div`
-  font-size: 40px;
+  font-size: 3em;
   margin: 20px auto;
   color: white;
 `;
 const Profile = styled.img`
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  min-width: 70px;
+  height: auto;
   margin: 0px auto;
 `;
 
 
 const ClockConatiner = styled.div`
-  display: flex;
-  flex: 3;
+  display: absolute;
   flex-direction: column;
-  line-height: 68px;
-  margin-left: 30px;
+  margin-left: 4vmin;
+  margin-bottom: 10vmin;
   text-shadow: 1px 1px 4px gray;
   color: white;
   .ClockTime {
-    font-size: 150px;
+    font-size: 9vmax;
   }
   .ClockDate {
-    font-size: 80px;
+    font-size: 6vmax;
   }
 `;
 const BackgroundImage = styled.div`
   position: relative;
-  width: 100%;
   height: 100vh;
   background: url(${(props) => props.picture || "/images/Image1.jpg"});
   background-position: center;

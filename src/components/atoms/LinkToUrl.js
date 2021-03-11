@@ -30,6 +30,9 @@ export function SwitchUrl(props){
     case 'School' :
         url="/School";
         break;
+    case 'game' :
+        url="/My games";
+        break;
     case 'JumpUp':
         url="https://play.google.com/store/apps/details?id=com.JetProc.JumpUp";
         break;
