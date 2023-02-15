@@ -1,36 +1,36 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import IconT from "../molecules/TaskBarIcon";
-import IconTS from "../molecules/TaskBarSystemIcon";
-import TimeandDates from "../molecules/TimeandDate";
+import IconT from '../molecules/TaskBarIcon';
+import IconTS from '../molecules/TaskBarSystemIcon';
+import TimeandDates from '../molecules/TimeandDate';
 
 const TaskBar = () => {
   return (
-      <TaskBarContainer>
-        <LeftContainer>
-          <IconT url="windowLogo" />
-          <IconT url="search" />
-          <IconT url="toDo" />
-          <IconT url="file" value=""/>
-          <IconT url="chrome" value="google"/>
-          <IconT url="edge" />
-          <IconT url="vsCode" />
-          <IconT url="zoom" />
-          <IconT url="photoshop" />
-          <IconT url="xd" />
-          <IconT url="overwatch" value="overwatch"/>
-        </LeftContainer>
-        <RightContainer>
-          <HomeButton />
-          <IconT url="notification" />
-          <TimeandDates />
-          <IconTS url="sound-mute" />
-          <IconTS url="battery-full" />
-          <IconTS url="wifi-lan" />
-          <IconTS url="arrow-up" />
-        </RightContainer>
-      </TaskBarContainer>
+    <TaskBarContainer>
+      <LeftContainer>
+        <IconT url="windowLogo" noOpen />
+        <IconT url="search" noOpen />
+        <IconT url="toDo" noOpen />
+        <IconT url="file" value="MyProfile" />
+        <IconT url="chrome" value="google" />
+        <IconT url="edge" value="google" />
+        <IconT url="vsCode" noOpen />
+        <IconT url="zoom" noOpen />
+        <IconT url="photoshop" noOpen />
+        <IconT url="xd" noOpen />
+        <IconT url="overwatch" value="overwatch" />
+      </LeftContainer>
+      <RightContainer>
+        <HomeButton />
+        <IconT url="notification" noOpen />
+        <TimeandDates />
+        <IconTS url="sound-mute" />
+        <IconTS url="battery-full" />
+        <IconTS url="wifi-lan" />
+        <IconTS url="arrow-up" />
+      </RightContainer>
+    </TaskBarContainer>
   );
 };
 const TaskBarContainer = styled.div`

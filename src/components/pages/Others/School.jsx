@@ -1,25 +1,28 @@
-import React from "react";
+import React from 'react';
 
-import File from "../../atoms/File"
-const School = (props) => {
+import File from '../../atoms/File';
+const School = props => {
   const array = [
     {
-      url: "dimigo-logo",
-      name: "Korea Digital Media HighSchool",
-      value: "https://www.dimigo.hs.kr/",
+      url: 'dimigo-logo',
+      name: 'Korea Digital Media HighSchool',
+      value: 'https://www.dimigo.hs.kr/',
       isFullScreen: true,
       isLink: true,
     },
     {
-      url: "game-controller",
-      name: "Jump Up",
-      value: "JumpUp",
+      url: 'inha',
+      name: 'Inha University',
+      value: 'https://www.inha.ac.kr',
+      isFullScreen: true,
+
+      isLink: true,
     },
-  ]
+  ];
   return (
     <>
-    <File title="School" arrays={array}/>
-   </>
-   );
+      <File title="School" arrays={array} />
+    </>
+  );
 };
 export default School;
