@@ -137,8 +137,9 @@ const ListIcon = styled.img`
 `;
 const ListName = styled.div`
   color: black;
-  text-decoration: none;
   word-break: break-all;
+
+  text-decoration: none;
 `;
 const ContentsContainer = styled.div`
   display: flex;
